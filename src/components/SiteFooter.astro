@@ -1,6 +1,7 @@
 ---
 import Icon from '@/components/Icon.astro'
 import { defaultLang, type Lang, localePath, useTranslations } from '@/i18n/ui'
+import { siteConfig } from '@/site.config'
 import { mdiRss, mdiSitemap } from '@/lib/icons'
 import { getPublishedPosts } from '@/lib/posts'
 
@@ -27,7 +28,7 @@ const runningDays = earliest
   class="wp-glass mx-auto mt-4 w-full max-w-[800px] rounded-[8px] px-6 py-6 text-center text-[0.82rem] text-ink-3"
 >
   <p class="my-1">
-    © {currentYear} <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="hover:text-accent"> example</a> All rights reserved
+    © {currentYear} <a href={siteConfig.url} target="_blank" rel="noopener noreferrer" class="hover:text-accent"> {siteConfig.author}</a> All rights reserved
   </p>
   <p>Powered by <a href="https://astro.build" target="_blank" rel="noopener noreferrer" class="hover:text-accent">Astro</a> & <a href="https://github.com/rightdoor/citrus-grid" target="_blank" rel="noopener noreferrer" class="hover:text-accent">CitrusGrid</a>
   </p>
