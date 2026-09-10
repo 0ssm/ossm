@@ -36,17 +36,23 @@ function pages(): (number | '...')[] {
 {
   totalPages > 1 && (
     <div class="mt-5 flex items-center justify-center gap-1 text-sm">
-      <a
-        href={pageUrl(currentPage - 1)}
-        class:list={[
-          'inline-flex h-8 min-w-8 items-center justify-center rounded px-2 text-ink-2! transition hover:bg-surface hover:text-accent!',
-          currentPage <= 1 && 'pointer-events-none opacity-40',
-        ]}
-        aria-disabled={currentPage <= 1}
-        aria-label={t('pagination.prev')}
-      >
-        <Icon d={mdiChevronLeft} />
-      </a>
+      {currentPage <= 1 ? (
+        <span
+          class="pg-btn pg-nav pg-disabled inline-flex h-8 min-w-8 items-center justify-center rounded px-2"
+          aria-disabled="true"
+          aria-label={t('pagination.prev')}
+        >
+          <Icon d={mdiChevronLeft} />
+        </span>
+      ) : (
+        <a
+          href={pageUrl(currentPage - 1)}
+          class="pg-btn pg-nav inline-flex h-8 min-w-8 items-center justify-center rounded px-2"
+          aria-label={t('pagination.prev')}
+        >
+          <Icon d={mdiChevronLeft} />
+        </a>
+      )}
       {pages().map((item) =>
         item === '...' ? (
           <span class="inline-flex h-8 min-w-8 items-center justify-center text-ink-3">…</span>
@@ -54,27 +60,79 @@ function pages(): (number | '...')[] {
           <a
             href={pageUrl(item)}
             class:list={[
-              'inline-flex h-8 min-w-8 items-center justify-center rounded px-2 transition',
-              item === currentPage
-                ? 'bg-accent font-semibold text-white!'
-                : 'text-ink-2! hover:bg-surface hover:text-accent!',
+              'pg-btn pg-num inline-flex h-8 min-w-8 items-center justify-center rounded px-2',
+              item === currentPage && 'pg-num-active',
             ]}
           >
             {item}
           </a>
         ),
       )}
-      <a
-        href={pageUrl(currentPage + 1)}
-        class:list={[
-          'inline-flex h-8 min-w-8 items-center justify-center rounded px-2 text-ink-2! transition hover:bg-surface hover:text-accent!',
-          currentPage >= totalPages && 'pointer-events-none opacity-40',
-        ]}
-        aria-disabled={currentPage >= totalPages}
-        aria-label={t('pagination.next')}
-      >
-        <Icon d={mdiChevronRight} />
-      </a>
+      {currentPage >= totalPages ? (
+        <button
+          type="button"
+          class="pg-btn pg-nav pg-disabled inline-flex h-8 min-w-8 items-center justify-center rounded px-2"
+          disabled
+          aria-label={t('pagination.next')}
+        >
+          <Icon d={mdiChevronRight} />
+        </button>
+      ) : (
+        <a
+          href={pageUrl(currentPage + 1)}
+          class="pg-btn pg-nav inline-flex h-8 min-w-8 items-center justify-center rounded px-2"
+          aria-label={t('pagination.next')}
+        >
+          <Icon d={mdiChevronRight} />
+        </a>
+      )}
     </div>
   )
 }
+
+<style>
+  /* 参考继续阅读按钮（.card-badge .card-btn）的配色与 hover */
+  .pg-btn {
+    border: none;
+    font: inherit;
+    transition:
+      transform 0.25s ease,
+      background 0.25s ease,
+      color 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+  /* 上/下一页：与继续阅读一致 —— 亮色深底浅字、暗色浅底深字 */
+  .pg-nav {
+    background: var(--wp-text);
+    color: var(--wp-bg);
+  }
+  a.pg-nav:hover {
+    background: var(--wp-accent);
+    color: #ffffff;
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px color-mix(in srgb, var(--wp-accent) 40%, transparent);
+  }
+  /* 无上一页/下一页时：配色与可点击状态完全一致，仅不可点击 */
+  .pg-disabled {
+    cursor: not-allowed;
+  }
+  /* 页数：与继续阅读明暗相反 —— 亮色浅底深字、暗色深底浅字 */
+  .pg-num {
+    border: 1px solid var(--wp-border);
+    background: var(--wp-bg);
+    color: var(--wp-text);
+  }
+  .pg-num:hover {
+    border-color: var(--wp-accent);
+    background: var(--wp-accent);
+    color: #ffffff;
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px color-mix(in srgb, var(--wp-accent) 40%, transparent);
+  }
+  .pg-num-active {
+    border-color: var(--wp-accent);
+    background: var(--wp-accent);
+    color: #ffffff;
+    font-weight: 600;
+  }
+</style>
