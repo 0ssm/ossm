@@ -72,5 +72,5 @@ export const siteConfig = {
 
   // 根据文件保存时间自动更新文章的 updated 字段，仅在启动和构建时更新
   // Auto-update each post's `updated` field from its file save time only updated during startup and build
-  autoUpdatePostUpdated: true,
+  autoUpdatePostUpdated: false,
 }
