@@ -69,20 +69,28 @@ function mergeLineRuns(items: QueueItem[]): BlockContent[] {
 }
 
 function makeContainer(type: string, title: string, body: BlockContent[]): BlockContent {
+  const isDetails = type === 'details'
+  const titleNode = {
+    type: 'paragraph',
+    data: {
+      hName: isDetails ? 'summary' : 'p',
+      hProperties: { className: ['md-container-title'] },
+    },
+    children: [{ type: 'text', value: title || type }],
+  }
+  const bodyNode = {
+    type: 'paragraph',
+    data: { hName: 'div', hProperties: { className: ['md-container-body'] } },
+    children: body,
+  }
+  const children = isDetails ? [titleNode, bodyNode] : [titleNode, ...body]
   return {
     type: 'paragraph',
     data: {
-      hName: 'div',
+      hName: isDetails ? 'details' : 'div',
       hProperties: { className: ['md-container', `md-container-${type}`] },
     },
-    children: [
-      {
-        type: 'paragraph',
-        data: { hName: 'p', hProperties: { className: ['md-container-title'] } },
-        children: [{ type: 'text', value: title || type }],
-      },
-      ...body,
-    ],
+    children,
   } as unknown as Paragraph
 }
 
