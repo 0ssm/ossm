@@ -36,10 +36,8 @@ const mins = readMinutes(post)
 const category = post.data.category
 const tags = post.data.tags
 
-// 文章累计阅读 / 独立访客
 const statsEnabled = Boolean(siteConfig.statsScript)
 const statsPath = `/posts/${post.id}`
-// 独立访客单位， 为空则不显示
 const visitorsUnit = t('post.visitorsUnit')
 const { Content, headings } = await render(post)
 const hasToc = headings.length > 0
@@ -59,7 +57,6 @@ const postYear = post.data.published.getFullYear()
       {post.data.title}
     </h1>
     <div class="space-y-1 text-[0.88rem] text-ink-3">
-      <!-- 日期 | 分类 -->
       <div class="flex flex-wrap items-center justify-center gap-3">
         <span class="inline-flex items-center gap-1">
           <Icon d={mdiCalendarOutline} class="text-sm" />
@@ -71,7 +68,6 @@ const postYear = post.data.published.getFullYear()
           {category}
         </a>
       </div>
-      <!-- 总字数 | 阅读时间 | 阅读次数 | 独立访客 -->
       <div class="flex flex-wrap items-center justify-center gap-3">
         <span class="inline-flex items-center gap-1">
           <Icon d={mdiTextRecognition} class="text-sm" />
@@ -109,7 +105,6 @@ const postYear = post.data.published.getFullYear()
           )
         }
       </div>
-      <!-- 更新时间 -->
       {
         updated && (
           <div class="flex flex-wrap items-center justify-center gap-3">
@@ -131,7 +126,6 @@ const postYear = post.data.published.getFullYear()
   </header>
 
   <div class="relative mx-auto max-w-[800px]">
-    <!-- data-pagefind-body：pagefind 只索引该区域，搜索范围限定为文章正文 -->
     <div class="post-content" data-pagefind-body>
       <Content />
     </div>
@@ -153,7 +147,6 @@ const postYear = post.data.published.getFullYear()
         </div>
       )
     }
-    <!-- 版权声明 -->
     <div class="copyright mb-5 rounded-[8px] border border-line-light bg-surface px-4 py-4 text-[0.82rem] leading-relaxed text-ink-3 shadow-card">
       <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
         <span>
@@ -221,7 +214,6 @@ const postYear = post.data.published.getFullYear()
 
   <Comments />
 
-  <!-- 桌面端目录 -->
   {
     hasToc && (
       <aside id="toc-affix" class="hidden opacity-0 transition-opacity duration-200 xl:block">
@@ -248,7 +240,6 @@ const postYear = post.data.published.getFullYear()
     )
   }
 
-  <!-- 移动端目录模态框 -->
   {
     hasToc && (
       <div id="toc-modal" class="wp-overlay fixed inset-0 z-[1500] hidden items-center justify-center bg-black/40 p-4">

@@ -15,7 +15,6 @@ const t = useTranslations(lang)
 
 function pageUrl(page: number): string {
   const base = baseUrl.endsWith('/') ? baseUrl.slice(0, -1) : baseUrl
-  // 带尾斜杠，与 Cloudflare Pages canonical URL 一致（详见 src/i18n/ui.ts localePath 注释）
   return page <= 1 ? `${base}/` : `${base}/${page}/`
 }
 
@@ -91,7 +90,6 @@ function pages(): (number | '...')[] {
 }
 
 <style>
-  /* 参考继续阅读按钮（.card-badge .card-btn）的配色与 hover */
   .pg-btn {
     border: none;
     font: inherit;
@@ -101,7 +99,6 @@ function pages(): (number | '...')[] {
       color 0.25s ease,
       box-shadow 0.25s ease;
   }
-  /* 上/下一页：与继续阅读一致 —— 亮色深底浅字、暗色浅底深字 */
   .pg-nav {
     background: var(--wp-text);
     color: var(--wp-bg);
@@ -112,11 +109,9 @@ function pages(): (number | '...')[] {
     transform: scale(1.05);
     box-shadow: 0 4px 16px color-mix(in srgb, var(--wp-accent) 40%, transparent);
   }
-  /* 无上一页/下一页时：配色与可点击状态完全一致，仅不可点击 */
   .pg-disabled {
     cursor: not-allowed;
   }
-  /* 页数：与继续阅读明暗相反 —— 亮色浅底深字、暗色深底浅字 */
   .pg-num {
     border: 1px solid var(--wp-border);
     background: var(--wp-bg);

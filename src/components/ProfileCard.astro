@@ -41,7 +41,6 @@ const statsEnabled = Boolean(siteConfig.statsScript)
 
 const numberLocale = { zh: 'zh-CN', ja: 'ja-JP', en: 'en-US' }[lang]
 
-// 平台图标映射及颜色配置
 const platformIcons: Record<string, string> = {
   github: mdiGithub,
   twitter: mdiTwitter,
@@ -87,7 +86,6 @@ const isExternal = (url: string) => /^(https?:|mailto:)/.test(url)
 
 <div class="profile-card mx-auto mb-8 max-w-[800px] pt-8 pb-4">
   <div class="card">
-    <!-- 头像、用户信息、统计数据 -->
     <div class="row-top">
       <div class="user-area">
         <img class="avatar" src={siteConfig.avatar} alt={siteConfig.author} width="64" height="64" />
@@ -141,7 +139,6 @@ const isExternal = (url: string) => /^(https?:|mailto:)/.test(url)
       </div>
     </div>
 
-    <!-- 社交按钮 -->
     {
       socials.length > 0 && (
         <div class="row-social">

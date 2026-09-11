@@ -65,7 +65,6 @@ function isActive(path: string): boolean {
           </a>
         ))
       }
-      <!-- 隐藏高亮槽：非顶层页面（非首页/归档/分类/标签/关于）通用，解决切换顿挫感 -->
       <a
         data-nav-path="__fallback__"
         aria-hidden="true"
@@ -74,7 +73,6 @@ function isActive(path: string): boolean {
       ></a>
     </nav>
 
-    <!-- 移动端菜单 -->
     <div class="hidden max-md:block">
       <details class="group relative">
         <summary

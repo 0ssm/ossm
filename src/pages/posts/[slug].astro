@@ -7,7 +7,6 @@ import { getPublishedPosts, type Post } from '@/lib/posts'
 export async function getStaticPaths() {
   const posts = await getPublishedPosts()
   return posts.map((post: Post, idx: number) => ({
-    // entry.id 即 frontmatter slug ，缺失时构建启动由 ensure-post-slugs 按标题拼音补写
     params: { slug: post.id },
     props: {
       post,

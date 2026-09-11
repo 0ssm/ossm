@@ -118,7 +118,6 @@ const jsonLd =
       <SearchModal lang={lang} />
     </div>
 
-    <!-- 统计客户端脚本注入， dev 下不注入 -->
     {siteConfig.statsScript && import.meta.env.PROD && (
       <script>import '@/stats/client'</script>
     )}

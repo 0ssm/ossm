@@ -1,9 +1,9 @@
 ---
 import Icon from '@/components/Icon.astro'
 import { defaultLang, type Lang, localePath, useTranslations } from '@/i18n/ui'
-import { siteConfig } from '@/site.config'
 import { mdiRss, mdiSitemap } from '@/lib/icons'
 import { getPublishedPosts } from '@/lib/posts'
+import { siteConfig } from '@/site.config'
 
 interface Props {
   lang?: Lang
@@ -13,7 +13,6 @@ const { lang = defaultLang } = Astro.props
 const t = useTranslations(lang)
 const currentYear = new Date().getFullYear()
 
-// 博客运行天数：以最早一篇文章的发布时间为起点，构建时计算
 const publishedPosts = await getPublishedPosts()
 const earliest = publishedPosts.reduce<Date | null>(
   (min, p) => (min === null || p.data.published < min ? p.data.published : min),
