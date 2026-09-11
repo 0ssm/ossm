@@ -10,6 +10,8 @@
 .post-content h4,
 .post-content h5,
 .post-content h6 {
+  position: relative;
+  padding-left: 0.9rem;
   color: var(--wp-text);
   font-weight: 700;
   line-height: 1.35;
@@ -17,22 +19,39 @@
   margin-bottom: 0.75em;
   scroll-margin-top: calc(60px + 1rem);
 }
+.post-content :is(h1, h2, h3, h4, h5, h6)::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  translate: 0 -50%;
+  width: 4px;
+  border-radius: 2px;
+  background: var(--wp-accent);
+  height: calc(100% - var(--i) * 14%);
+}
 .post-content h1 {
+  --i: 0;
   font-size: 1.75rem;
 }
 .post-content h2 {
+  --i: 1;
   font-size: 1.45rem;
 }
 .post-content h3 {
+  --i: 2;
   font-size: 1.2rem;
 }
 .post-content h4 {
+  --i: 3;
   font-size: 1.05rem;
 }
 .post-content h5 {
+  --i: 4;
   font-size: 1rem;
 }
 .post-content h6 {
+  --i: 5;
   font-size: 0.95rem;
 }
 
