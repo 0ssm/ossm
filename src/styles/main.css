@@ -8,9 +8,9 @@
   --wp-surface: #ffffff;
   --wp-surface-hover: #f4eae2;
   --wp-code-bg: #ece7dc;
-  --wp-accent: #e86233;
-  --wp-accent-hover: #ea7b53;
-  --wp-accent-deep: #b6502b;
+  --wp-accent: #322e2a;
+  --wp-accent-hover: #000000;
+  --wp-accent-deep: #322e2a;
   --wp-link: var(--wp-accent-deep);
   --wp-link-hover: var(--wp-accent);
   --wp-gold: #8a6939;
@@ -52,9 +52,9 @@
   --wp-surface: #1b1a18;
   --wp-surface-hover: #23221f;
   --wp-code-bg: #0e0d0c;
-  --wp-accent: #db7753;
-  --wp-accent-hover: #e28969;
-  --wp-accent-deep: #c86541;
+  --wp-accent: #ffffff;
+  --wp-accent-hover: #ffffff;
+  --wp-accent-deep: #ffffff;
   --wp-link: var(--wp-accent);
   --wp-link-hover: var(--wp-accent-hover);
   --wp-gold: #b08d4e;
