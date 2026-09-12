@@ -1,7 +1,7 @@
 ---
 title: "Monte Carlo Tree Search: Planning Under Uncertainty by Learning from Random Play"
 description: A Technical Deep Dive From Intuition to Implementation
-slug: mcts-tree-search
+slug: mcts
 index: 0
 category: [Reinforcement Learning]
 tags: [Reinforcement learning, Mathematics]
