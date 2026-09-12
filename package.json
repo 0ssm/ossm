@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build && node scripts/inject-modulepreloads.js && node scripts/minify-inline-scripts.js && pagefind --site dist",
+    "build": "astro build && node scripts/postbuild.js",
     "preview": "astro preview",
     "check": "astro check",
     "type-check": "tsc --noEmit",

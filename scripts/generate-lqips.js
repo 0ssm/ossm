@@ -1,4 +1,3 @@
-import { spawnSync } from 'node:child_process'
 import { createHash } from 'node:crypto'
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs'
 import path from 'node:path'
@@ -160,13 +159,14 @@ let generatedInProcess = false
 export function generateLqips() {
   return {
     name: 'generate-lqips',
-    buildStart() {
+    async buildStart() {
       if (generatedInProcess) return
       generatedInProcess = true
-      const res = spawnSync(process.execPath, [THIS_FILE], { stdio: 'inherit' })
-      // 生成失败，本次构建使用无 LQIP 降级骨架
-      if (res.status !== 0) {
-        console.warn('[lqip] generation failed, building without LQIP fallback skeleton')
+      try {
+        await main()
+      } catch (err) {
+        // 生成失败，本次构建使用无 LQIP 降级骨架
+        console.warn('[lqip] generation failed, building without LQIP fallback skeleton:', err)
       }
     },
   }
