@@ -121,8 +121,8 @@ body {
   line-height: 1.7;
   color: var(--wp-text);
   background-color: var(--wp-bg);
-  background-image: var(--wp-grid-image);
-  background-size: 28px 28px;
+  /* background-image: var(--wp-grid-image); */
+  /* background-size: 28px 28px; */
   /* 限制背景跟随滚动 */
   background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
