@@ -191,6 +191,29 @@ const jsonLd =
         if (searchBtn) {
           document.dispatchEvent(new CustomEvent('open-search'))
         }
+        const details = target.closest<HTMLDetailsElement>('details.md-container-details')
+        const summary = target.closest('summary')
+        if (details && summary === details.querySelector(':scope > summary')) {
+          const body = details.querySelector<HTMLElement>('.md-container-body')
+          if (!details.open) {
+            if (body) body.style.height = ''
+            return
+          }
+          if (!body || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+          e.preventDefault()
+          const from = body.scrollHeight
+          body.animate([{ height: `${from}px`, opacity: 1 }, { height: '0px', opacity: 0 }], {
+            duration: 300,
+            easing: 'cubic-bezier(0.33, 1, 0.68, 1)',
+          }).addEventListener(
+            'finish',
+            () => {
+              body.style.height = '0px'
+              details.removeAttribute('open')
+            },
+            { once: true },
+          )
+        }
       })
     </script>
   </body>
