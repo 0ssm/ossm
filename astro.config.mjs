@@ -9,6 +9,9 @@ import rehypeSlug from 'rehype-slug'
 import remarkBreaks from 'remark-breaks'
 import remarkEmoji from 'remark-emoji'
 import remarkMath from 'remark-math'
+import enJson from './src/i18n/en.json'
+import jaJson from './src/i18n/ja.json'
+import zhJson from './src/i18n/zh.json'
 import { ensurePostSlugs } from './scripts/ensure-post-slugs.js'
 import { generateLqips } from './scripts/generate-lqips.js'
 import { updatePostUpdated } from './scripts/update-post-updated.js'
@@ -22,6 +25,9 @@ import { siteConfig } from './src/site.config.ts'
 
 const site = siteConfig.url
 
+// 脚注标题走 i18n：markdown 处理器是构建期全局配置，取站点默认语言
+const footnoteLabel = { zh: zhJson, ja: jaJson, en: enJson }[siteConfig.defaultLang].post.footnotes
+
 export default defineConfig({
   site,
   server: { host: '::' },
@@ -34,7 +40,7 @@ export default defineConfig({
     processor: unified({
       gfm: true,
       smartypants: false,
-      remarkRehype: { footnoteLabel: 'Footnote' },
+      remarkRehype: { footnoteLabel },
       remarkPlugins: [remarkBreaks, remarkEmoji, remarkMath, remarkContainers],
       rehypePlugins: [
         rehypeKatex,

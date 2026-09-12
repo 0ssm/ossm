@@ -32,6 +32,9 @@
     "toc": "Table of Contents",
     "tableOfContents": "Table of Contents",
     "backHome": "Back to home",
+    "copy": "Copy",
+    "copied": "Copied",
+    "footnotes": "Footnotes",
     "copyright": {
       "author": "All rights reserved © {year}",
       "licenseLabel": "License",
@@ -109,6 +112,7 @@
   },
   "misc": {
     "sortByName": "By name",
-    "sortByCount": "By count"
+    "sortByCount": "By count",
+    "backToTop": "Back to top"
   }
 }

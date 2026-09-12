@@ -32,7 +32,7 @@ export async function renderMarkdownHtml(source: string, options: RenderOptions)
     .use(remarkEmoji)
     .use(remarkMath)
     .use(remarkContainers)
-    .use(remarkRehype, { allowDangerousHtml: true, footnoteLabel: '脚注' })
+    .use(remarkRehype, { allowDangerousHtml: true, footnoteLabel: 'footnote' })
     .use(rehypeKatex)
     .use(rehypeCodeBlock)
     .use(rehypeImages)
@@ -42,7 +42,7 @@ export async function renderMarkdownHtml(source: string, options: RenderOptions)
     .use(rehypeSlug)
     .use(rehypeAutolinkHeadings, {
       behavior: 'append',
-      properties: { className: ['heading-anchor'], tabIndex: -1, ariaLabel: '标题锚点' },
+      properties: { className: ['heading-anchor'], tabIndex: -1, ariaLabel: 'heading anchor' },
       content: { type: 'element', tagName: 'span', properties: {}, children: [] },
     } satisfies AutolinkOptions)
     .use(rehypeRaw)

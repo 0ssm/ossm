@@ -7,6 +7,7 @@ import Comments from '@/components/Comments.astro'
 import Icon from '@/components/Icon.astro'
 import { defaultLang, type Lang, localePath, useTranslations } from '@/i18n/ui'
 import {
+  iconSvg,
   mdiAccountOutline,
   mdiCalendarOutline,
   mdiClockOutline,
@@ -38,6 +39,9 @@ const tags = post.data.tags
 
 const statsEnabled = Boolean(siteConfig.statsScript)
 const statsPath = `/posts/${post.id}`
+
+const copyIdleHtml = `${iconSvg('mdi-content-copy')}<span>${t('post.copy')}</span>`
+const copyDoneHtml = `${iconSvg('mdi-check')}<span>${t('post.copied')}</span>`
 const visitorsUnit = t('post.visitorsUnit')
 const { Content, headings } = await render(post)
 const hasToc = headings.length > 0
@@ -272,9 +276,12 @@ const postYear = post.data.published.getFullYear()
   }
 </div>
 
+<script is:inline define:vars={{ copyIdleHtml, copyDoneHtml }}>
+  window.__blogCopyIdleHtml = copyIdleHtml
+  window.__blogCopyDoneHtml = copyDoneHtml
+</script>
 <script>
   import { onPageLoad } from '@/lib/pageLifecycle'
-  import { iconSvg } from '@/lib/icons'
 
   function copyTextFallback(text: string) {
     const ta = document.createElement('textarea')
@@ -289,18 +296,16 @@ const postYear = post.data.published.getFullYear()
     }
     document.body.removeChild(ta)
   }
-  const COPY_IDLE_HTML = `${iconSvg('mdi-content-copy')}<span>复制</span>`
-  const COPY_DONE_HTML = `${iconSvg('mdi-check')}<span>已复制</span>`
   ;(window as any).__blogCopyCode = function (btn: HTMLElement) {
     const block = btn.closest('.code-block')
     const code = block?.querySelector('code')
     if (!code) return
     const text = code.textContent || ''
     const done = () => {
-      btn.innerHTML = COPY_DONE_HTML
+      btn.innerHTML = (window as any).__blogCopyDoneHtml
       btn.classList.add('is-success')
       setTimeout(() => {
-        btn.innerHTML = COPY_IDLE_HTML
+        btn.innerHTML = (window as any).__blogCopyIdleHtml
         btn.classList.remove('is-success')
       }, 2000)
     }
