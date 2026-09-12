@@ -103,5 +103,5 @@ export function groupByYear(posts: Post[]): YearGroup[] {
 
 // 归档日期格式：MM-DD
 export function monthDay(date: Date): string {
-  return dayjs(date).format('MM-DD')
+  return dayjs(date).format('MMM DD')
 }
