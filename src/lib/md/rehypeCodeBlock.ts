@@ -107,7 +107,7 @@ function renderCodeBlockHtml(code: string, rawLang: string) {
   const langLabel = rawLang || 'text'
   const langClass = normalized ? `language-${normalized}` : 'language-text'
   const lineNumbers = buildLineNumbers(code)
-  return `<div class="code-block"><div class="code-header"><span class="code-lang">${iconSvg(langIcon(rawLang))}${escapeAttr(langLabel)}</span><button class="code-copy" type="button" onclick="window.__blogCopyCode(this)">${iconSvg('mdi-content-copy')}<span>复制</span></button></div><div class="code-body"><div class="code-gutter">${lineNumbers}</div><pre class="code-pre"><code class="${langClass}">${highlighted}</code></pre></div></div>`
+  return `<div class="code-block"><div class="code-header"><span class="code-lang">${iconSvg(langIcon(rawLang))}${escapeAttr(langLabel)}</span><button class="code-copy" type="button" onclick="window.__blogCopyCode(this)">${iconSvg('mdi-content-copy')}<span>copy</span></button></div><div class="code-body"><div class="code-gutter">${lineNumbers}</div><pre class="code-pre"><code class="${langClass}">${highlighted}</code></pre></div></div>`
 }
 
 function extractLang(code: Element): string {
