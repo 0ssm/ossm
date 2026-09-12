@@ -9,12 +9,12 @@ import rehypeSlug from 'rehype-slug'
 import remarkBreaks from 'remark-breaks'
 import remarkEmoji from 'remark-emoji'
 import remarkMath from 'remark-math'
-import enJson from './src/i18n/en.json'
-import jaJson from './src/i18n/ja.json'
-import zhJson from './src/i18n/zh.json'
 import { ensurePostSlugs } from './scripts/ensure-post-slugs.js'
 import { generateLqips } from './scripts/generate-lqips.js'
 import { updatePostUpdated } from './scripts/update-post-updated.js'
+import enJson from './src/i18n/en.json'
+import jaJson from './src/i18n/ja.json'
+import zhJson from './src/i18n/zh.json'
 import { rehypeCodeBlock } from './src/lib/md/rehypeCodeBlock.ts'
 import { rehypeExternalLinks } from './src/lib/md/rehypeExternalLinks.ts'
 import { rehypeImages } from './src/lib/md/rehypeImages.ts'
@@ -40,7 +40,7 @@ export default defineConfig({
     processor: unified({
       gfm: true,
       smartypants: false,
-      remarkRehype: { footnoteLabel },
+      remarkRehype: { footnoteLabel, clobberPrefix: 'post-' },
       remarkPlugins: [remarkBreaks, remarkEmoji, remarkMath, remarkContainers],
       rehypePlugins: [
         rehypeKatex,

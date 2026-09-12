@@ -32,7 +32,11 @@ export async function renderMarkdownHtml(source: string, options: RenderOptions)
     .use(remarkEmoji)
     .use(remarkMath)
     .use(remarkContainers)
-    .use(remarkRehype, { allowDangerousHtml: true, footnoteLabel: 'footnote' })
+    .use(remarkRehype, {
+      allowDangerousHtml: true,
+      footnoteLabel: 'footnote',
+      clobberPrefix: 'post-',
+    })
     .use(rehypeKatex)
     .use(rehypeCodeBlock)
     .use(rehypeImages)
