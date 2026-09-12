@@ -32,6 +32,9 @@
     "toc": "目次",
     "tableOfContents": "Table of Contents",
     "backHome": "ホームへ戻る",
+    "copy": "コピー",
+    "copied": "コピーしました",
+    "footnotes": "脚注",
     "copyright": {
       "author": "著作権所有 © {year}",
       "licenseLabel": "ライセンス",
@@ -109,6 +112,7 @@
   },
   "misc": {
     "sortByName": "名前順",
-    "sortByCount": "件数順"
+    "sortByCount": "件数順",
+    "backToTop": "トップへ戻る"
   }
 }

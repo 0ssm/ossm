@@ -32,6 +32,9 @@
     "toc": "目录",
     "tableOfContents": "目录",
     "backHome": "返回首页",
+    "copy": "复制",
+    "copied": "已复制",
+    "footnotes": "脚注",
     "copyright": {
       "author": "版权所有 © {year}",
       "licenseLabel": "许可协议",
@@ -109,6 +112,7 @@
   },
   "misc": {
     "sortByName": "按名称",
-    "sortByCount": "按数量"
+    "sortByCount": "按数量",
+    "backToTop": "回到顶部"
   }
 }
