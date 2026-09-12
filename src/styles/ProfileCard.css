@@ -155,12 +155,12 @@
 .social-btn:hover {
   background: var(--p-brand);
   border-color: var(--p-brand);
-  color: #fff;
+  color: #000;
   box-shadow: 0 8px 20px color-mix(in srgb, var(--p-brand) 25%, transparent);
 }
 
 .social-btn:hover svg {
-  color: #fff;
+  color: #89a147;
 }
 
 @media (max-width: 640px) {
