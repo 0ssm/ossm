@@ -1,0 +1,111 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+---
+
+<style>
+  .project-box {
+    border: 1px solid #999;
+    border-radius: 8px;
+    padding: 24px;
+  }
+
+  .dark .project-box {
+    border-color: #555;
+  }
+</style>
+
+<BaseLayout lang="en" title="Projects">
+
+  <main class="mx-auto max-w-[900px] mt-12 px-4">
+
+    <h1 class="font-serif text-[2rem] mb-10">Projects</h1>
+
+    <div class="space-y-6">
+
+      <!-- MathProject -->
+      <section class="project-box">
+
+        <h3 class="text-xl font-semibold">
+          MathProject
+        </h3>
+
+        <ul class="mt-3 list-disc pl-6 space-y-2">
+          <li>
+            A collection of high-quality mathematics problems and learning resources.
+          </li>
+
+          <li>
+            Covers mathematics, problem solving, and mathematical programming.
+          </li>
+        </ul>
+
+        <a
+          href="https://mathproject.in"
+          class="inline-block mt-4"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Visit project →
+        </a>
+
+      </section>
+
+
+      <!-- Project Two -->
+      <section class="project-box">
+
+        <h3 class="text-xl font-semibold">
+          Project Two
+        </h3>
+
+        <ul class="mt-3 list-disc pl-6 space-y-2">
+          <li>
+            Short description of the project.
+          </li>
+
+          <li>
+            One important feature or purpose of the project.
+          </li>
+        </ul>
+
+        <a
+          href="#"
+          class="inline-block mt-4"
+        >
+          View project →
+        </a>
+
+      </section>
+
+
+      <!-- Project Three -->
+      <section class="project-box">
+
+        <h3 class="text-xl font-semibold">
+          Project Three
+        </h3>
+
+        <ul class="mt-3 list-disc pl-6 space-y-2">
+          <li>
+            Short description of the project.
+          </li>
+
+          <li>
+            What you built, studied, or experimented with.
+          </li>
+        </ul>
+
+        <a
+          href="#"
+          class="inline-block mt-4"
+        >
+          View project →
+        </a>
+
+      </section>
+
+    </div>
+
+  </main>
+
+</BaseLayout>
