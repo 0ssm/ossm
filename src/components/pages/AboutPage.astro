@@ -32,42 +32,176 @@
       <strong> AI, mathematics, and science.</strong>
     </p>
 
-
   </div>
 
-  <h2 class="font-serif text-[1.75rem] mt-12 mb-6">Find Me Online</h2>
+  <!-- Online profiles -->
+  <section class="online-section">
 
-  <ul class="list-disc pl-10 space-y-3">
-    <li>
-      <strong>X:</strong>
-      <a href="https://x.com/skmih" target="_blank" rel="noopener noreferrer">@skmih</a>
-    </li>
+    <div class="section-heading">
+      <h2>Find Me Online</h2>
+    </div>
 
-    <li>
-      <strong>Bluesky:</strong>
-      <a href="https://bsky.app/profile/ossm.me" target="_blank" rel="noopener noreferrer">@ossm.me</a>
-    </li>
+    <div class="social-grid">
+      <a
+        href="https://mathstodon.xyz/@ossm"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="social-card"
+      >
+        <span class="social-name">Mathstodon</span>
+        <span class="social-handle">@ossm</span>
+        <span class="social-arrow">↗</span>
+      </a>
 
-    <li>
-      <strong>Mathstodon:</strong>
-      <a href="https://mathstodon.xyz/@ossm" target="_blank" rel="noopener noreferrer">@ossm</a>
-    </li>
+      <a
+        href="https://x.com/skmih"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="social-card"
+      >
+        <span class="social-name">X</span>
+        <span class="social-handle">@skmih</span>
+        <span class="social-arrow">↗</span>
+      </a>
 
-    <li>
-      <strong>Reddit:</strong>
-      <a href="https://www.reddit.com/user/ossm-me/" target="_blank" rel="noopener noreferrer">u/ossm-me</a>
-    </li>
+      <a
+        href="https://bsky.app/profile/ossm.me"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="social-card"
+      >
+        <span class="social-name">Bluesky</span>
+        <span class="social-handle">@ossm.me</span>
+        <span class="social-arrow">↗</span>
+      </a>
 
-    <li>
-      <strong>AtCoder:</strong>
-      <a href="https://atcoder.jp/users/Ossm" target="_blank" rel="noopener noreferrer">@ossm</a>
-    </li>
 
-    <li>
-      <strong>GitHub:</strong>
-      <a href="https://github.com/0ssm" target="_blank" rel="noopener noreferrer">@0ssm</a>
-    </li>
-  </ul>
+      <a
+        href="https://www.reddit.com/user/ossm-me/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="social-card"
+      >
+        <span class="social-name">Reddit</span>
+        <span class="social-handle">u/ossm-me</span>
+        <span class="social-arrow">↗</span>
+      </a>
+
+      <a
+        href="https://atcoder.jp/users/Ossm"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="social-card"
+      >
+        <span class="social-name">AtCoder</span>
+        <span class="social-handle">@ossm</span>
+        <span class="social-arrow">↗</span>
+      </a>
+
+      <a
+        href="https://github.com/0ssm"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="social-card"
+      >
+        <span class="social-name">GitHub</span>
+        <span class="social-handle">@0ssm</span>
+        <span class="social-arrow">↗</span>
+      </a>
+
+    </div>
+
+  </section>
 
 </div>
 
+
+<style>
+  /* Online section */
+
+  .online-section {
+    margin-top: 5rem;
+  }
+
+  .section-heading {
+    margin-bottom: 1.5rem;
+  }
+
+  .section-heading .eyebrow {
+    margin-bottom: 0.6rem;
+  }
+
+  .section-heading h2 {
+    margin-bottom: 0;
+  }
+
+  .social-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+  }
+
+  .social-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 72px;
+    padding: 1rem 1.2rem;
+    border: 1px solid var(--wp-border);
+    border-radius: 10px;
+    text-decoration: none;
+    background: var(--wp-card);
+    transition:
+      transform 0.2s ease,
+      border-color 0.2s ease,
+      background 0.2s ease;
+  }
+
+  .social-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--wp-text);
+    text-decoration: none;
+  }
+
+  .social-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--wp-text);
+  }
+
+  .social-handle {
+    margin-left: 0.7rem;
+    font-size: 0.86rem;
+    color: var(--wp-muted);
+  }
+
+  .social-arrow {
+    margin-left: auto;
+    font-size: 1.1rem;
+    color: var(--wp-muted);
+    transition: transform 0.2s ease;
+  }
+
+  .social-card:hover .social-arrow {
+    transform: translate(2px, -2px);
+    color: var(--wp-text);
+  }
+
+  /* Dark mode */
+
+  .dark .social-card:hover {
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Mobile */
+
+  @media (max-width: 700px) {
+    .social-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .online-section {
+      margin-top: 3.5rem;
+    }
+  }
+</style>
