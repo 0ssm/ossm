@@ -48,6 +48,8 @@ export const siteConfig = {
   // Platforms without a dedicated icon fall back to a generic link icon
   socials: [
     { platform: 'github', url: 'https://github.com/0ssm' },
+    { platform: 'X', url: 'https://x.com/skmih'},
+    { platform: 'Email', url: 'mailto:sumitxit@gmail.com'},
     { platform: 'Linktree', url: 'https://linktr.ee/0ssm'},
     { platform: 'rss', url: '/rss.xml' }
   ] as SocialLink[],
