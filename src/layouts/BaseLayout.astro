@@ -30,7 +30,7 @@ const {
 } = Astro.props
 const pageTitle = title
   ? `${siteConfig.title} - ${title}`
-  : `${siteConfig.title} - ${siteConfig.subtitle}`
+  : siteConfig.title
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 const ogImageURL = new URL(seoImage || siteConfig.logo, Astro.site)

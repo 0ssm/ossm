@@ -18,8 +18,8 @@ export const siteConfig = {
 
   // 站点信息 Site info
   title: "Ossm's blog",
-  subtitle: 'A personal collection of research notes, ideas, and explorations in reinforcement learning, applied mathematics, and related areas.',
-  description: 'Exploring problems, ideas, and connections across mathematics and computation.',
+  subtitle: 'Notes from my learning',
+  description: 'Notes from my learning, research, and things I find interesting',
 
   // 首页卡片的头像和网站图标 Logo ， public/ 下的静态路径，以 / 开头
   // Avatar and site logo for the home profile card. Static paths under public/, starting with /
