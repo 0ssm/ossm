@@ -120,14 +120,15 @@ function pages(): (number | '...')[] {
   .pg-num:hover {
     border-color: var(--wp-accent);
     background: var(--wp-accent);
-    color: #ffffff;
+    color: var(--wp-bg);
     transform: scale(1.05);
     box-shadow: 0 4px 16px color-mix(in srgb, var(--wp-accent) 40%, transparent);
   }
+
   .pg-num-active {
     border-color: var(--wp-accent);
     background: var(--wp-accent);
-    color: #ffffff;
+    color: var(--wp-bg);
     font-weight: 600;
   }
-</style>
+  </style>

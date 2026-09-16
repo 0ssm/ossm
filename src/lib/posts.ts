@@ -37,7 +37,7 @@ export function readMinutes(post: Post): number {
 
 // 日期格式化 YYYY-MM-DD HH:mm
 export function formatDate(date: Date): string {
-  return dayjs(date).format('YYYY-MM-DD HH:mm')
+  return dayjs(date).format('MMM DD, YYYY')
 }
 
 // 摘要：description 优先，否则从正文顺序提取 120 字

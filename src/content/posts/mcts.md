@@ -6,7 +6,6 @@ index: 0
 category: [Reinforcement Learning]
 tags: [Reinforcement learning, Mathematics]
 published: 2026-09-12 00:06:34
-updated: 2026-09-12 00:10:21
 ---
 
 ## Abstract

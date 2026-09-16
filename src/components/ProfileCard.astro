@@ -96,32 +96,36 @@ const isExternal = (url: string) => /^(https?:|mailto:)/.test(url)
           <span class="bio">{siteConfig.description}</span>
         </div>
       </div>
+    </div>
+<!--
+<div class="stats" style="margin-top: 16px;">
+  <div class="stat-item">
+    <span class="stat-number">
+      {articles.toLocaleString(numberLocale)}<span class="unit">{t('profile.articlesUnit')}</span>
+    </span>
+    <span class="stat-label">{t('profile.articlesLabel')}</span>
+  </div>
 
-      <div class="stats">
-        <div class="stat-item">
-          <span class="stat-number">
-            {words.toLocaleString(numberLocale)}<span class="unit">{t('profile.wordsUnit')}</span>
-          </span>
-          <span class="stat-label">{t('profile.wordsLabel')}</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number">
-            {articles.toLocaleString(numberLocale)}<span class="unit">{t('profile.articlesUnit')}</span>
-          </span>
-          <span class="stat-label">{t('profile.articlesLabel')}</span>
-        </div>
-        {statsEnabled && (
-          <div class="stats-extra">
-            <div class="stat-item">
-              <span class="stat-number">
-                <span data-stats="site-pv">-</span><span class="unit">{t('profile.pvUnit')}</span>
-              </span>
-              <span class="stat-label">{t('profile.pvLabel')}</span>
-            </div>
-          </div>
-        )}
+  <div class="stat-item">
+    <span class="stat-number">
+      {words.toLocaleString(numberLocale)}<span class="unit">{t('profile.wordsUnit')}</span>
+    </span>
+    <span class="stat-label">{t('profile.wordsLabel')}</span>
+  </div>
+
+
+  {statsEnabled && (
+    <div class="stats-extra">
+      <div class="stat-item">
+        <span class="stat-number">
+          <span data-stats="site-pv">-</span><span class="unit">{t('profile.pvUnit')}</span>
+        </span>
+        <span class="stat-label">{t('profile.pvLabel')}</span>
       </div>
     </div>
+  )}
+</div>
+-->
 
     {
       socials.length > 0 && (
@@ -143,4 +147,3 @@ const isExternal = (url: string) => /^(https?:|mailto:)/.test(url)
     }
   </div>
 </div>
-

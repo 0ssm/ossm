@@ -15,7 +15,17 @@ const { lang = defaultLang, post } = Astro.props
 const t = useTranslations(lang)
 
 const title = post.data.title
-const date = formatDate(post.data.published)
+const date = new Date(post.data.published).toLocaleDateString('en-US', {
+  month: 'short',
+  day: 'numeric',
+  year: 'numeric',
+})
+
+const displayDate = new Date(post.data.updated ?? post.data.published).toLocaleDateString('en-US', {
+  month: 'short',
+  day: 'numeric',
+  year: 'numeric',
+})
 const words = wordCount(post)
 const mins = readMinutes(post)
 const excerpt = excerptOf(post)
@@ -84,6 +94,9 @@ const statsEnabled = Boolean(siteConfig.statsScript)
     }
     <a href={postUrl} class="card-badge card-btn">{t('list.readMore')}</a>
   </div>
-  {post.data.updated && <span class="card-badge card-btn-left"><Icon d={mdiUpdate} class="mr-1 text-[11px]" />{formatDate(post.data.updated)}</span>}
+  <span class="card-badge card-btn-left">
+  <Icon d={post.data.updated ? mdiUpdate : mdiCalendarOutline} class="mr-1 text-[11px]" />
+  {displayDate}
+</span>
 </article>
 
