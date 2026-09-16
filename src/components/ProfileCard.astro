@@ -104,14 +104,6 @@ const isExternal = (url: string) => /^(https?:|mailto:)/.test(url)
           </span>
           <span class="stat-label">{t('profile.wordsLabel')}</span>
         </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <span class="stat-number">
-            {hours.toLocaleString(numberLocale)}<span class="unit">{t('profile.hoursUnit')}</span>
-          </span>
-          <span class="stat-label">{t('profile.hoursLabel')}</span>
-        </div>
-        <div class="stat-divider"></div>
         <div class="stat-item">
           <span class="stat-number">
             {articles.toLocaleString(numberLocale)}<span class="unit">{t('profile.articlesUnit')}</span>
@@ -120,14 +112,6 @@ const isExternal = (url: string) => /^(https?:|mailto:)/.test(url)
         </div>
         {statsEnabled && (
           <div class="stats-extra">
-            <div class="stat-divider"></div>
-            <div class="stat-item">
-              <span class="stat-number">
-                <span data-stats="site-uv">-</span><span class="unit">{t('profile.uvUnit')}</span>
-              </span>
-              <span class="stat-label">{t('profile.uvLabel')}</span>
-            </div>
-            <div class="stat-divider"></div>
             <div class="stat-item">
               <span class="stat-number">
                 <span data-stats="site-pv">-</span><span class="unit">{t('profile.pvUnit')}</span>

@@ -56,7 +56,7 @@ export const siteConfig = {
 
   // 统计脚本，脚本位于 src/stats/ 目录，契约详见 src/stats/使用规则.md ，留空不启用
   // Statistics script. Scripts live in src/stats/, see src/stats/usageRules.md for the plugin contract. Leave empty to disable
-  // statsScript: 'random-visitor',
+  statsScript: 'random-visitor',
 
   // 友链，改为空数组 [] 显示空状态页。icon 放在 public/friends/ 下，引用以 /friends/文件名.后缀
   // Friend links. Set to an empty array [] to show an empty state. Icons go under public/friends/ and are referenced as /friends/filename.ext
